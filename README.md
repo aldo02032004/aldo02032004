@@ -1,5 +1,7 @@
 ## Hi, I'm Naufaldo Indra Pratama
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-naufaldo--pratama-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naufaldo-pratama/)
+
 I build data and NLP pipelines for **Indonesian news and social media**: turning raw monitoring exports into issue maps, influencer rankings, sentiment forecasts, and training data for language models.
 
 What I care about in my work:
