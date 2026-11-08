@@ -4,9 +4,7 @@
 
 I build data and NLP pipelines for **Indonesian news and social media**. Each project starts from a raw media-monitoring export and ends with something people can act on: issue maps, influencer rankings, stance summaries, forecasts, and training data for language models.
 
-```
-monitoring export → clean & de-duplicate → classify (rules first, LLM for hard cases) → network / map / forecast → report
-```
+**Monitoring export → clean → classify (rules first, LLM for the hard cases) → network / map / forecast → report**
 
 Every project opens in **Google Colab with one click**. The LLM steps run a local open model ([Gemma 2 9B SahabatAI](https://huggingface.co/faizonly5953/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF) with llama.cpp) on the free Colab GPU, so no API key is needed.
 
@@ -14,11 +12,11 @@ Every project opens in **Google Colab with one click**. The LLM steps run a loca
 
 | Project | Question it answers | What's inside | Stack |
 |---|---|---|---|
-| [**Social Media KOL Analysis**](https://github.com/aldo02032004/social-media-kol-analysis) | Who drives the conversation on a topic, and which side are they on? | Cleans mentions and merges account spellings, picks the top 5 news and 5 social issues, builds a retweet/reply network per theme, scores KOLs by PageRank, eigenvector, engagement and followers, then summarises each KOL's stance. | NetworkX, llama.cpp, pandas |
-| [**LLM Topic Classification**](https://github.com/aldo02032004/llm-topic-classification-pipeline) | What themes does a topic split into, and who leads each theme? | Type a topic in one sentence; the LLM writes the themes and keywords, labels posts into a JSON schema, ranks top authors per theme and summarises their stance. Resumes after a disconnect. | llama.cpp, Pydantic, pandas |
-| [**Environmental Issue Monitoring**](https://github.com/aldo02032004/environmental-issue-monitoring) | Which environmental issues are discussed, and where in Indonesia? | Rule-based issue classification and a province/island resolver feed a choropleth dashboard. One real day: 1,826 mentions → 532 unique documents → 17 issue types in under 3 seconds. | pandas, GeoPandas, Matplotlib |
-| [**Sentiment Volume Forecast**](https://github.com/aldo02032004/sentiment-volume-forecast) | How many positive, negative and neutral posts will there be in the next days? | Five methods are backtested on rolling windows; the method is chosen on one part of the runs and scored on runs it never saw. Interactive chart with an 80% range. | scikit-learn, sktime, ipywidgets |
-| [**Indonesian Political-Economic NER**](https://github.com/aldo02032004/NER_env) *(in progress)* | Which people, agencies, parties, companies and policies are mentioned? | GLiNER tags posts, the local LLM checks uncertain ones, and checked posts become training data for a smaller IndoBERT model. Python package with 91 tests. | GLiNER, llama.cpp, pytest |
+| [**Social Media KOL Analysis**](https://github.com/aldo02032004/social-media-kol-analysis) | Who drives a topic, and which side are they on? | Top 5 news and social issues, a retweet/reply network per theme, KOL score from PageRank, eigenvector, engagement and followers, and each KOL's stance. | NetworkX, llama.cpp, pandas |
+| [**LLM Topic Classification**](https://github.com/aldo02032004/llm-topic-classification-pipeline) | Which themes does a topic split into, and who leads each? | Type a topic in one sentence; the LLM writes themes and keywords, labels posts, ranks top authors per theme and summarises their stance. | llama.cpp, Pydantic, pandas |
+| [**Environmental Issue Monitoring**](https://github.com/aldo02032004/environmental-issue-monitoring) | Which environmental issues, and where in Indonesia? | Rule-based issues plus a province resolver feed a map dashboard. One real day: 1,826 mentions → 532 documents → 17 issue types in under 3 s. | pandas, GeoPandas, Matplotlib |
+| [**Sentiment Volume Forecast**](https://github.com/aldo02032004/sentiment-volume-forecast) | How many positive, negative and neutral posts are coming? | Five methods backtested on rolling windows, scored on runs they never saw, with an interactive chart and 80% range. | scikit-learn, sktime, ipywidgets |
+| [**Indonesian Political-Economic NER**](https://github.com/aldo02032004/NER_env) *(in progress)* | Which people, agencies, parties and policies are named? | GLiNER tags posts, the LLM checks uncertain ones, and checked posts train a smaller IndoBERT. Package with 91 tests. | GLiNER, llama.cpp, pytest |
 
 Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-language classification) live in [naufaldo.github.io](https://github.com/aldo02032004/naufaldo.github.io).
 
