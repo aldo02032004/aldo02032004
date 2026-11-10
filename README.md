@@ -2,11 +2,11 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-naufaldo--pratama-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naufaldo-pratama/)
 
-I build data and NLP pipelines for **Indonesian news and social media**. Each project starts from a raw media-monitoring export and ends with something people can act on: issue maps, influencer rankings, stance summaries, forecasts, and training data for language models.
+I build data and NLP pipelines for **Indonesian news and social media**, and quantitative **risk models for energy supply**. Each project starts from raw data and ends with something people can act on: issue maps, influencer rankings, stance summaries, forecasts, training data for language models, and cost-at-risk dashboards.
 
 **Monitoring export → clean → classify (rules first, LLM for the hard cases) → network / map / forecast → report**
 
-Every project opens in **Google Colab with one click**. The LLM steps run a local open model ([Gemma 2 9B SahabatAI](https://huggingface.co/faizonly5953/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF) with llama.cpp) on the free Colab GPU, so no API key is needed.
+Every project opens in **Google Colab with one click**. The LLM steps in the NLP projects run a local open model ([Gemma 2 9B SahabatAI](https://huggingface.co/faizonly5953/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF) with llama.cpp) on the free Colab GPU, so no API key is needed.
 
 ### Projects
 
@@ -16,6 +16,7 @@ Every project opens in **Google Colab with one click**. The LLM steps run a loca
 | [**LLM Topic Classification**](https://github.com/aldo02032004/llm-topic-classification-pipeline) | Which themes does a topic split into, and who leads each? | Type a topic in one sentence; the LLM writes themes and keywords, labels posts, ranks top authors per theme and summarises their stance. | llama.cpp, Pydantic, pandas |
 | [**Environmental Issue Monitoring**](https://github.com/aldo02032004/environmental-issue-monitoring) | Which environmental issues, and where in Indonesia? | Rule-based issues plus a province resolver feed a map dashboard. One real day: 1,826 mentions → 532 documents → 17 issue types in under 3 s. | pandas, GeoPandas, Matplotlib |
 | [**Sentiment Volume Forecast**](https://github.com/aldo02032004/sentiment-volume-forecast) | How many positive, negative and neutral posts are coming? | Five methods backtested on rolling windows, scored on runs they never saw, with an interactive chart and 80% range. | scikit-learn, sktime, ipywidgets |
+| [**LNG Supply Risk Analysis**](https://github.com/aldo02032004/lng-supply-risk-analysis) | How far can next year's LNG cost overshoot the budget, and how much does hedging help? | ISO 31000 cycle on real Brent and USD/IDR data: risk register, 10,000-scenario Monte Carlo, VaR/CVaR/Cost-at-Risk, hedging effect, volatility KRI, BCMS and a one-page dashboard. | pandas, NumPy, seaborn, Gemini API |
 | [**Indonesian Political-Economic NER**](https://github.com/aldo02032004/NER_env) *(in progress)* | Which people, agencies, parties and policies are named? | GLiNER tags posts, the LLM checks uncertain ones, and checked posts train a smaller IndoBERT. Package with 91 tests. | GLiNER, llama.cpp, pytest |
 
 Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-language classification) live in [naufaldo.github.io](https://github.com/aldo02032004/naufaldo.github.io).
@@ -31,5 +32,6 @@ Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-l
 **Languages & data:** Python, pandas, NumPy<br>
 **NLP & LLM:** Hugging Face Transformers (IndoBERT), GLiNER, llama.cpp (GGUF), Pydantic / JSON schema<br>
 **ML & analysis:** scikit-learn, sktime, NetworkX<br>
-**Visualisation:** Matplotlib, GeoPandas, ipywidgets<br>
+**Risk & finance:** Monte Carlo simulation, VaR / CVaR, ISO 31000, yfinance, FRED<br>
+**Visualisation:** Matplotlib, seaborn, GeoPandas, ipywidgets<br>
 **Workflow:** Jupyter / Google Colab, Git & GitHub, pytest
