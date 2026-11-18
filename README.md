@@ -29,6 +29,12 @@ The LLM steps run a local open model ([Gemma 2 9B SahabatAI](https://huggingface
 | [**Sentiment Volume Forecast**](https://github.com/aldo02032004/sentiment-volume-forecast) | How many positive, negative and neutral posts are coming? | Five methods backtested on rolling windows, scored on runs they never saw, with an interactive chart and 80% range. | scikit-learn, sktime, ipywidgets |
 | [**Indonesian Political-Economic NER**](https://github.com/aldo02032004/NER_env) *(in progress)* | Which people, agencies, parties and policies are named? | GLiNER tags posts, the LLM checks uncertain ones, and checked posts train a smaller IndoBERT. Package with 91 tests. | GLiNER, llama.cpp, pytest |
 
+### Industrial sensor data
+
+| Project | Question it answers | What's inside | Stack |
+|---|---|---|---|
+| [**Power Plant Anomaly**](https://github.com/aldo02032004/power-plant-anomaly) | Can a year of power plant sensor data be trusted, and when do sensors read abnormally? | 12 physics and formula checks on 50,091 readings (they show the data has no physical structure), an efficiency signal check with and without leaky columns, and a robust z-score detector calibrated on injected spikes (precision 0.97, recall 0.98 at 6σ). | scikit-learn, pandas, Matplotlib |
+
 Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-language classification) live in [naufaldo.github.io](https://github.com/aldo02032004/naufaldo.github.io).
 
 ### How I work
@@ -41,7 +47,7 @@ Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-l
 
 **Languages & data:** Python, pandas, NumPy<br>
 **Risk & finance:** credit risk (PD, LGD, EAD, expected loss), model validation (AUC, KS, PSI, calibration), Monte Carlo simulation, Vasicek model, VaR / CVaR, ISO 31000, yfinance, FRED<br>
-**ML & analysis:** scikit-learn, SciPy, sktime, NetworkX<br>
+**ML & analysis:** scikit-learn, SciPy, sktime, NetworkX, anomaly detection, data validation<br>
 **NLP & LLM:** Hugging Face Transformers (IndoBERT), GLiNER, llama.cpp (GGUF), Pydantic / JSON schema<br>
 **Visualisation:** Matplotlib, seaborn, GeoPandas, ipywidgets<br>
 **Workflow:** Jupyter / Google Colab, Git & GitHub, pytest
