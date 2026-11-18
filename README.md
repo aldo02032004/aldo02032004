@@ -33,7 +33,7 @@ The LLM steps run a local open model ([Gemma 2 9B SahabatAI](https://huggingface
 
 | Project | Question it answers | What's inside | Stack |
 |---|---|---|---|
-| [**Power Plant Anomaly**](https://github.com/aldo02032004/power-plant-anomaly) | Can a year of power plant sensor data be trusted, how far ahead can efficiency be forecast, and which sensors drive it? | 12 physics and formula checks on 50,091 readings, a LightGBM efficiency forecast (R² 0.82 at 10 minutes vs 0.56 for persistence), permutation importance of 40 sensors, and a robust z-score anomaly detector calibrated on injected spikes (precision 0.97, recall 0.98 at 6σ). | LightGBM, scikit-learn, pandas, Matplotlib |
+| [**Power Plant Anomaly**](https://github.com/aldo02032004/power-plant-anomaly) | Can a year of power plant sensor data be trusted, how far ahead can efficiency be forecast, and which sensors drive it? | 12 physics and formula checks on 50,091 readings, a LightGBM vs XGBoost efficiency forecast (R² 0.82 at 10 minutes vs 0.56 for persistence), permutation importance of 40 sensors, and a robust z-score anomaly detector calibrated on injected spikes (precision 0.97, recall 0.98 at 6σ). | LightGBM, XGBoost, scikit-learn, pandas, Matplotlib |
 
 Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-language classification) live in [naufaldo.github.io](https://github.com/aldo02032004/naufaldo.github.io).
 
@@ -47,7 +47,7 @@ Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-l
 
 **Languages & data:** Python, pandas, NumPy<br>
 **Risk & finance:** credit risk (PD, LGD, EAD, expected loss), model validation (AUC, KS, PSI, calibration), Monte Carlo simulation, Vasicek model, VaR / CVaR, ISO 31000, yfinance, FRED<br>
-**ML & analysis:** scikit-learn, LightGBM, SciPy, sktime, NetworkX, anomaly detection, data validation<br>
+**ML & analysis:** scikit-learn, LightGBM, XGBoost, SciPy, sktime, NetworkX, anomaly detection, data validation<br>
 **NLP & LLM:** Hugging Face Transformers (IndoBERT), GLiNER, llama.cpp (GGUF), Pydantic / JSON schema<br>
 **Visualisation:** Matplotlib, seaborn, GeoPandas, ipywidgets<br>
 **Workflow:** Jupyter / Google Colab, Git & GitHub, pytest
