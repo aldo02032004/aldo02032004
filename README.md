@@ -12,8 +12,9 @@ Every project opens in **Google Colab with one click**.
 |---|---|---|---|
 | [**Credit Risk Model**](https://github.com/aldo02032004/credit-risk-model) | Which applicants should a lender approve, and how much can the loan book lose in a bad year? | PD model on 150,000 real borrowers (logistic regression vs gradient boosting), bank-style validation (AUC 0.853, KS, calibration, PSI), a break-even score cutoff that cuts expected loss by 41%, and a Vasicek Monte Carlo with VaR 99 and stress test. | scikit-learn, SciPy, pandas, Matplotlib |
 | [**LNG Supply Risk Analysis**](https://github.com/aldo02032004/lng-supply-risk-analysis) | How far can next year's LNG cost overshoot the budget, and how much does hedging help? | ISO 31000 cycle on real Brent and USD/IDR data: risk register, 10,000-scenario Monte Carlo, VaR / CVaR / Cost-at-Risk, hedging effect, volatility KRI and BCMS. | pandas, NumPy, Matplotlib, Gemini API |
+| [**Fuel Price Risk Model (Excel)**](https://github.com/aldo02032004/fuel-price-risk-excel) | How far can fuel cost overshoot the budget when its price follows Brent? | Fuel price risk model in Excel: VaR / ES, a 1,000-iteration Monte Carlo, scenarios with hedge sensitivity, and an ISO 31000 risk register, with an interactive dashboard. | Excel 365 (XLOOKUP, FORECAST.ETS, pivot, slicer) |
 
-Results in both projects end as 16:9 charts whose title states the main message, ready for a slide.
+Results end as 16:9 charts or a one-page dashboard whose title states the main message, ready for a slide.
 
 ### Data and NLP pipelines
 
@@ -33,7 +34,7 @@ The LLM steps run a local open model ([Gemma 2 9B SahabatAI](https://huggingface
 
 | Project | Question it answers | What's inside | Stack |
 |---|---|---|---|
-| [**Power Plant Anomaly**](https://github.com/aldo02032004/power-plant-anomaly) | Can a year of power plant sensor data be trusted, how far ahead can efficiency be forecast, and which sensors drive it? | 12 physics and formula checks on 50,091 readings, a LightGBM vs XGBoost efficiency forecast (R² 0.82 at 10 minutes vs 0.56 for persistence), permutation importance of 40 sensors, and a robust z-score anomaly detector calibrated on injected spikes (precision 0.97, recall 0.98 at 6σ). | LightGBM, XGBoost, scikit-learn, pandas, Matplotlib |
+| [**Power Plant Validation, Forecast & Anomaly**](https://github.com/aldo02032004/power-plant-validation-forecast-anomaly) | Can a year of power plant sensor data be trusted, how far ahead can efficiency be forecast, and which sensors drive it? | 12 physics and formula checks on 50,091 readings, a LightGBM vs XGBoost efficiency forecast (R² 0.82 at 10 minutes vs 0.56 for persistence), permutation importance of 40 sensors, and a robust z-score anomaly detector calibrated on injected spikes (precision 0.97, recall 0.98 at 6σ). | LightGBM, XGBoost, scikit-learn, pandas, Matplotlib |
 
 Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-language classification) live in [naufaldo.github.io](https://github.com/aldo02032004/naufaldo.github.io).
 
@@ -45,8 +46,8 @@ Smaller notebooks (daily report, weekly visualisation, word clouds, figurative-l
 
 ### Tools
 
-**Languages & data:** Python, pandas, NumPy<br>
-**Risk & finance:** credit risk (PD, LGD, EAD, expected loss), model validation (AUC, KS, PSI, calibration), Monte Carlo simulation, Vasicek model, VaR / CVaR, ISO 31000, yfinance, FRED<br>
+**Languages & data:** Python, pandas, NumPy, Excel (formulas, pivot, Monte Carlo, dashboards)<br>
+**Risk & finance:** credit risk (PD, LGD, EAD, expected loss), model validation (AUC, KS, PSI, calibration), Monte Carlo simulation, Vasicek model, VaR / CVaR / ES, hedge sensitivity, ISO 31000 risk register, yfinance, FRED<br>
 **ML & analysis:** scikit-learn, LightGBM, XGBoost, SciPy, sktime, NetworkX, anomaly detection, data validation<br>
 **NLP & LLM:** Hugging Face Transformers (IndoBERT), GLiNER, llama.cpp (GGUF), Pydantic / JSON schema<br>
 **Visualisation:** Matplotlib, seaborn, GeoPandas, ipywidgets<br>
